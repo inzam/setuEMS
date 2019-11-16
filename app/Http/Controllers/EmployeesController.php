@@ -27,7 +27,28 @@ class EmployeesController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->dl);
+        $this->validateRequest();
 
+        $personals = new Personal();
+
+        $personals->nid = request('nid');
+        $personals->passport = request('passport');
+        $personals->dl = request('dl');
+        $personals->dob = request('dob');
+        $personals->gender = request('gender');
+        $personals->father = request('father');
+        $personals->mother = request('mother');
+        $personals->gurrantor = request('gurrantor');
+        $personals->maritalstatus = request('maritalstatus');
+        $personals->spouse = request('spouse');
+        $personals->children = request('children');
+        $personals->presentaddress = request('presentaddress');
+        $personals->permanentaddress = request('permanentaddress');
+
+        $personals->save();
+
+        return redirect('personal');
     }
 
 
@@ -52,5 +73,27 @@ class EmployeesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //    form validation
+    public function validateRequest(){
+
+        return tap(request()->validate([
+
+            'nid' => 'required|numeric',
+            'passport' => 'nullable',
+            'dl' => 'boolean',
+            'dob' => 'date',
+            'gender' => 'required',
+            'father' => 'required|string',
+            'mother' => 'required|string',
+            'gurrantor' => 'required|string',
+            'maritalstatus' => 'required',
+            'spouse' => 'nullable|string',
+            'children' => 'nullable|numeric',
+            'presentaddress' => 'required',
+            'permanentaddress' => 'required'
+        ])
+        );
     }
 }

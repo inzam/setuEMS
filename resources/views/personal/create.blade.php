@@ -13,7 +13,7 @@
                         <label class="col-md-4 control-label">NID</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"></span><input id="nid" name="nid" placeholder="NID"
-                                   class="form-control" required="true" value="{{ old('nid') ?? $personal->nid }}" type="text"></div>
+                                   class="form-control" required value="{{ old('nid') ?? $personal->nid }}" type="text"></div>
                         </div>
                         @if($errors->first('nid')) <div class="alert alert-danger">{{ $errors->first('nid') }}</div>@endif
                     </div>
@@ -46,9 +46,9 @@
                         <div class="col-md-8 inputGroupContainer">
                             <select class="custom-select " id="gender" name="gender">
                                 <option selected>Choose...</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <option value="3">Other</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
                         @if($errors->first('gender')) <div class="alert alert-danger">{{ $errors->first('gender') }}</div>@endif
@@ -80,12 +80,12 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="maritalstatus">Marital Status</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <select class="custom-select " id="maritalstatus" name="maritalstatus">
+                            <select class="custom-select " required id="maritalstatus" name="maritalstatus">
                                 <option selected>Choose...</option>
-                                <option value="1">Unmarried</option>
-                                <option value="2">Married</option>
-                                <option value="3">Divorced</option>
-                                <option value="3">Widowed</option>
+                                <option value="unmarried">Unmarried</option>
+                                <option value="married">Married</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="widowed">Widowed</option>
                             </select>
                         </div>
                         @if($errors->first('maritalstatus')) <div class="alert alert-danger">{{ $errors->first('maritalstatus') }}</div>@endif
