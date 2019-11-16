@@ -15,6 +15,5 @@ Route::view('/', 'employee');
 Route::get('personal', 'EmployeesController@index');
 Route::get('personal/create', 'EmployeesController@create');
 Route::post('personal', 'EmployeesController@store');
-Route::get('personal/create', 'EmployeesController@create');
-Route::get('personal/create', 'EmployeesController@create');
-Route::get('personal/create', 'EmployeesController@create');
+Route::get('personal/{personal}/edit', 'EmployeesController@edit');
+Route::patch('personal/{personal}', 'EmployeesController@update');

@@ -30,7 +30,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="personal">Personal Info</a>
+                            <a class="nav-link" href="{{url('/personal')}}">Personal Info</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">HR Info</a>

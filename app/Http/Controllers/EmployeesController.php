@@ -27,7 +27,7 @@ class EmployeesController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->dl);
+        //dd($request->dl);
         $this->validateRequest();
 
         $personals = new Personal();
@@ -58,15 +58,19 @@ class EmployeesController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit(Personal $personal)
     {
-        //
+        return view('personal.edit', compact('personal'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Personal $personal)
     {
-        //
+        $personal->update($this->validateRequest());
+
+        $personal->save();
+
+        return redirect('personal');
     }
 
 
@@ -82,7 +86,7 @@ class EmployeesController extends Controller
 
             'nid' => 'required|numeric',
             'passport' => 'nullable',
-            'dl' => 'boolean',
+            'dl' => 'nullable',
             'dob' => 'date',
             'gender' => 'required',
             'father' => 'required|string',
