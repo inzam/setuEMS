@@ -2,10 +2,12 @@
 
 @section('content')
 
-    <h2>Edit item {{ $personal->id }}</h2>
+    <div class="d-flex justify-content-center">
+        <h2>Edit item {{ $personal->id }}</h2>
+    </div>
 
     <table class="table table-striped ">
-        <tbody>
+       <tbody>
         <tr>
             <td colspan="1">
                 <form class="well form-horizontal" action="/personal/{{ $personal->id }}" method="POST">

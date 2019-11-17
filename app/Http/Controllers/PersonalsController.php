@@ -69,9 +69,9 @@ class PersonalsController extends Controller
     {
         $personal->update($this->validateRequest());
 
-        $personal->save();
+        //$personal->save();
 
-        return redirect('personal');
+        return redirect('personal/'. $personal->id);
     }
 
 
@@ -84,7 +84,7 @@ class PersonalsController extends Controller
     //    form validation
     public function validateRequest(){
 
-        return tap(request()->validate([
+        return request()->validate([
 
             'nid' => 'required|numeric',
             'passport' => 'nullable',
@@ -99,7 +99,7 @@ class PersonalsController extends Controller
             'children' => 'nullable|numeric',
             'presentaddress' => 'required',
             'permanentaddress' => 'required'
-        ])
-        );
+        ]);
+
     }
 }
