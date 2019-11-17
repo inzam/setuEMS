@@ -13,7 +13,7 @@
 
                     @include('personal.form')
 
-                    <button type="submit" class="btn btn-success">Save info</button>
+                    <button type="submit" class="btn btn-outline-success">Save info</button>
 
                     @csrf
                 </form>

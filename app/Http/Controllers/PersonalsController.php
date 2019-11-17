@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Schema;
 use App\Personal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
-class EmployeesController extends Controller
+class PersonalsController extends Controller
 {
 
     public function index()
@@ -27,8 +29,7 @@ class EmployeesController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request->dl);
-        $this->validateRequest();
+       $this->validateRequest();
 
         $personals = new Personal();
 
@@ -52,9 +53,9 @@ class EmployeesController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Personal $personal)
     {
-        //
+        return view('personal.show', compact('personal'));
     }
 
 
@@ -74,9 +75,10 @@ class EmployeesController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(Request $request, Personal $personal)
     {
-        //
+        $personal->delete();
+        return redirect('personal');
     }
 
     //    form validation
