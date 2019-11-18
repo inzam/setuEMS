@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-light">
 <div class="container">
-    <div id="app">
+    <div id="">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -33,7 +33,7 @@
                             <a class="nav-link" href="{{url('/personal')}}">Personal Info</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">HR Info</a>
+                            <a class="nav-link" href="{{url('/official')}}">Official Info</a>
                         </li>
                     </ul>
 
