@@ -13,20 +13,26 @@
 
 Route::view('/', 'employee');
 //personal info
-Route::get('personal', 'PersonalsController@index');
-Route::get('personal/create', 'PersonalsController@create');
-Route::post('personal', 'PersonalsController@store');
-Route::get('personal/{personal}', 'PersonalsController@show');
-Route::get('personal/{personal}/edit', 'PersonalsController@edit');
-Route::patch('personal/{personal}', 'PersonalsController@update');
-Route::delete('personal/{personal}', 'PersonalsController@destroy');
+Route::get('personal', 'PersonalsController@index')->middleware('auth');
+Route::get('personal/create', 'PersonalsController@create')->middleware('auth');
+Route::post('personal', 'PersonalsController@store')->middleware('auth');
+Route::get('personal/{personal}', 'PersonalsController@show')->middleware('auth');
+Route::get('personal/{personal}/edit', 'PersonalsController@edit')->middleware('auth');
+Route::patch('personal/{personal}', 'PersonalsController@update')->middleware('auth');
+Route::delete('personal/{personal}', 'PersonalsController@destroy')->middleware('auth');
 
 //official info
-Route::get('official', 'OfficialsController@index');
-Route::get('official/create', 'OfficialsController@create');
-Route::post('official', 'OfficialsController@store');
-Route::get('official/{official}', 'OfficialsController@show');
-Route::get('official/{official}/edit', 'OfficialsController@edit');
-Route::patch('official/{official}', 'OfficialsController@update');
-Route::delete('official/{official}', 'OfficialsController@destroy');
+Route::get('official', 'OfficialsController@index')->middleware('auth');
+Route::get('official/create', 'OfficialsController@create')->middleware('auth');
+Route::post('official', 'OfficialsController@store')->middleware('auth');
+Route::get('official/{official}', 'OfficialsController@show')->middleware('auth');
+Route::get('official/{official}/edit', 'OfficialsController@edit')->middleware('auth');
+Route::patch('official/{official}', 'OfficialsController@update')->middleware('auth');
+Route::delete('official/{official}', 'OfficialsController@destroy')->middleware('auth');
 
+
+Auth::routes([
+    'register' => false
+]);
+
+Route::get('/home', 'HomeController@index')->name('home');

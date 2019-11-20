@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="h-100 row align-items-center" style="align-content: center">
-        <div class="col">
+    <div class="container">
+        <div class="row justify-content-center">
 
             <div class="d-flex justify-content-center">
                 <h1>Personal Info</h1>

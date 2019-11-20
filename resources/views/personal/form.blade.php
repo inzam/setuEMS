@@ -1,7 +1,7 @@
-<fieldset class="">
+<fieldset class="ml-5">
     <div class="form-group">
         <label class="col-md-4 control-label" for="name">Name</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <select class="custom-select" required id="official_id"name="official_id">
                 <option value="0" selected="selected">Choose..</option>
             @foreach($officials as $official)
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">NID</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><span class="input-group-addon"></span><input id="nid" name="nid" placeholder="NID"
                                                                                    class="form-control" required value="{{ old('nid') ?? $personal->nid }}" type="text"></div>
         </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Passport Number</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="passport" name="passport" placeholder="Passport Number"
                                             class="form-control" value="{{ old('passport') ?? $personal->passport }}" type="text"></div>
         </div>
@@ -39,14 +39,14 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Date of Birth</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="dob" name="dob"  class="form-control" required value="{{ old('dob') ?? $personal->dob }}" type="date"></div>
         </div>
         @if($errors->first('dob')) <div class="alert alert-danger">{{ $errors->first('dob') }}</div>@endif
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label" for="gender">Gender</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <select class="custom-select" required id="gender" name="gender">
                 <option selected value="">Choose...</option>
                 <option value="male" {{ old('gender') == 'male' ?'selected' : '' }}>Male</option>
@@ -58,7 +58,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Father's Name</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="father" name="father" placeholder="Father's Name"
                                             class="form-control" required value="{{ old('father') ?? $personal->father }}" type="text"></div>
         </div>
@@ -66,7 +66,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Mother's Name</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="mother" name="mother" placeholder="mother's Name"
                                             class="form-control" required value="{{ old('mother') ?? $personal->mother }}" type="text"></div>
         </div>
@@ -74,7 +74,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Gurrantor's Name</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="gurrantor" name="gurrantor" placeholder="Gurrantor's Name"
                                             class="form-control" required value="{{ old('gurrantor') ?? $personal->gurrantor }}" type="text"></div>
         </div>
@@ -82,7 +82,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label" for="maritalstatus">Marital Status</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <select class="custom-select " required id="maritalstatus" name="maritalstatus">
                 <option selected value="">Choose...</option>
                 <option value="unmarried" {{ old('maritalstatus') == 'unmarried' ?'selected' : '' }}>Unmarried</option>
@@ -95,7 +95,7 @@
     </div>
     <div class="form-group" id="spouseDiv">
         <label class="col-md-4 control-label">Spouse's Name</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="spouse" name="spouse" placeholder="Spouse's Name"
                                             class="form-control" value="{{ old('spouse') ?? $personal->spouse }}" type="text"></div>
         </div>
@@ -103,7 +103,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Number of Children</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="children" name="children" placeholder="Number of children"
                                             class="form-control" value="{{ old('children') ?? $personal->children }}" type="text"></div>
         </div>
@@ -111,7 +111,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Present Address</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="presentaddress" name="presentaddress" placeholder="Present Address"
                                             class="form-control" required value="{{ old('presentaddress') ?? $personal->presentaddress }}" type="text"></div>
         </div>
@@ -119,7 +119,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Permanent Address</label>
-        <div class="col-md-8 inputGroupContainer">
+        <div class="col-md-10 inputGroupContainer">
             <div class="input-group"><input id="permanentaddress" name="permanentaddress" placeholder="Permanent Address"
                                             class="form-control" required value="{{ old('permanentaddress') ?? $personal->permanentaddress }}" type="text"></div>
         </div>
