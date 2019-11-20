@@ -1,27 +1,27 @@
 <fieldset class="ml-5">
     <div class="form-group">
-        <label class="col-md-4 control-label">Office ID</label>
-        <div class="col-md-8 inputGroupContainer">
-            <div class="input-group"><span class="input-group-addon"></span>
-                <input id="officeID" name="officeID" placeholder="Office ID"
-                       class="form-control" required value="{{ old('officeID') ?? $official->officeID }}" type="text">
+            <label class="col-md-4 control-label">Office ID</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><span class="input-group-addon"></span>
+                    <input id="officeID" name="officeID" placeholder="Office ID"
+                           class="form-control" required value="{{ old('officeID') ?? $official->officeID }}" type="text">
+                </div>
             </div>
+            @if($errors->first('officeID')) <div class="alert alert-danger">{{ $errors->first('officeID') }}</div>@endif
         </div>
-        @if($errors->first('officeID')) <div class="alert alert-danger">{{ $errors->first('officeID') }}</div>@endif
-    </div>
     <div class="form-group">
-        <label class="col-md-4 control-label">Name</label>
-        <div class="col-md-8 inputGroupContainer">
-            <div class="input-group"><input id="name" name="name" placeholder="Full Name"
-              class="form-control" required value="{{ old('name') ?? $official->name }}" type="text"></div>
+            <label class="col-md-4 control-label">Name</label>
+            <div class="col-md-8 inputGroupContainer">
+                <div class="input-group"><input id="name" name="name" placeholder="Full Name"
+                  class="form-control" required value="{{ old('name') ?? $official->name }}" type="text"></div>
+            </div>
+            @if($errors->first('name')) <div class="alert alert-danger">{{ $errors->first('name') }}</div>@endif
         </div>
-        @if($errors->first('name')) <div class="alert alert-danger">{{ $errors->first('name') }}</div>@endif
-    </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Upload Profile Photo</label>
         <div class="col-md-8 inputGroupContainer">
             <div class="input-group"><input id="pp" name="pp"
-                 class="form-control-file" required type="file">
+                 class="form-control-file" type="file">
             </div>
         </div>
         @if($errors->first('pp')) <div class="alert alert-danger">{{ $errors->first('pp') }}</div>@endif
@@ -55,11 +55,11 @@
     <div class="form-group">
         <label class="col-md-4 control-label">Mobile Number</label>
         <div class="col-md-8 inputGroupContainer">
-            <div class="input-group"><input id="mobilenumber" name="mobilenumber" placeholder="Mobile Number"
-                 class="form-control" required value="{{ old('mobilenumber') ?? $official->mobilenumber }}" type="tel">
+            <div class="input-group"><input id="personalmobile" name="personalmobile" placeholder="Mobile Number"
+                 class="form-control" required value="{{ old('personalmobile') ?? $official->personalmobile }}" type="tel">
             </div>
         </div>
-        @if($errors->first('mobilenumber')) <div class="alert alert-danger">{{ $errors->first('mobilenumber') }}</div>@endif
+        @if($errors->first('personalmobile')) <div class="alert alert-danger">{{ $errors->first('personalmobile') }}</div>@endif
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label">Family Mobile Number</label>
@@ -109,7 +109,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label">Year of Passing</label>
         <div class="col-md-8 inputGroupContainer">
-            <div class="input-group"><input id="yearofpass" name="yearofpass" placeholder="Permanent Address"
+            <div class="input-group"><input id="yearofpass" name="yearofpass" placeholder="Year of Passing"
                  class="form-control" value="{{ old('yearofpass') ?? $official->yearofpass }}" type="text">
             </div>
         </div>

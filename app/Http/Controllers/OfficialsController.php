@@ -33,19 +33,24 @@ class OfficialsController extends Controller
 
         $officials = new Official();
 
-        $officials->nid = request('nid');
-        $officials->passport = request('passport');
-        $officials->dl = request('dl');
-        $officials->dob = request('dob');
-        $officials->gender = request('gender');
-        $officials->father = request('father');
-        $officials->mother = request('mother');
-        $officials->gurrantor = request('gurrantor');
-        $officials->maritalstatus = request('maritalstatus');
-        $officials->spouse = request('spouse');
-        $officials->children = request('children');
-        $officials->presentaddress = request('presentaddress');
-        $officials->permanentaddress = request('permanentaddress');
+        $officials->officeID = request('officeID');
+        $officials->name = request('name');
+        $officials->bloodgroup = request('bloodgroup');
+        $officials->personalmobile = request('personalmobile');
+        $officials->familymobile = request('familymobile');
+        $officials->gurrantormobile = request('gurrantormobile');
+        $officials->email = request('email');
+        $officials->extracurricular = request('extracurricular');
+        $officials->eduquali = request('eduquali');
+        $officials->lasteduresult = request('lasteduresult');
+        $officials->eduinstitute = request('eduinstitute');
+        $officials->yearofpass = request('yearofpass');
+        $officials->lastworkinginst = request('lastworkinginst');
+        $officials->lastworkingdesig = request('lastworkingdesig');
+        $officials->lastworkingduration = request('lastworkingduration');
+        $officials->similarexperience = request('similarexperience');
+
+        $this->storeFile($officials);
 
         $officials->save();
 
@@ -69,7 +74,7 @@ class OfficialsController extends Controller
     {
         $official->update($this->validateRequest());
 
-        //$official->save();
+        $this->storeFile($official);
 
         return redirect('official/'. $official->id);
     }
@@ -84,22 +89,42 @@ class OfficialsController extends Controller
     //    form validation
     public function validateRequest(){
 
-        return request()->validate([
+        $validatedData =  request()->validate([
 
-            'nid' => 'required|numeric',
-            'passport' => 'nullable',
-            'dl' => 'nullable',
-            'dob' => 'date',
-            'gender' => 'required',
-            'father' => 'required|string',
-            'mother' => 'required|string',
-            'gurrantor' => 'required|string',
-            'maritalstatus' => 'required',
-            'spouse' => 'nullable|string',
-            'children' => 'nullable|numeric',
-            'presentaddress' => 'required',
-            'permanentaddress' => 'required'
+            'officeID' => 'required',
+            'name' => 'required',
+            'bloodgroup' => 'required',
+            'personalmobile' => 'required',
+            'familymobile' => 'required',
+            'gurrantormobile' => 'required',
+            'email' => 'required|email',
+            'extracurricular' => 'nullable|string',
+            'eduquali' => 'required|string',
+            'lasteduresult' => 'nullable|string',
+            'eduinstitute' => 'nullable|string',
+            'yearofpass' => 'nullable|string',
+            'lastworkinginst' => 'nullable|string',
+            'lastworkingdesig' => 'nullable|string',
+            'lastworkingduration' => 'nullable|string',
+            'similarexperience' => 'nullable|string',
+            //'pp' => 'nullable|image|max:1000',
+
         ]);
+        if(request()->hasFile('pp')){
+            request()->validate([
+                'pp' => 'file|image|max:1000'
+            ]);
+        }
 
+        return $validatedData;
+    }
+    //image store
+    public function storeFile(Official $official){
+        if(request()->has('pp')){
+            //dd(request()->file);
+            $official->update([
+                'pp' => request()->pp->store('profilePhoto', 'public')
+            ]);
+        }
     }
 }

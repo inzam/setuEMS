@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Official;
 use Illuminate\Support\Facades\Schema;
 use App\Personal;
 use Illuminate\Http\Request;
@@ -13,17 +14,19 @@ class PersonalsController extends Controller
     public function index()
     {
         $personals = Personal::orderBy('created_at')->paginate(10);
+        $official = Official::all();
 
-        return view('personal.index',compact('personals'));
+        return view('personal.index',compact('personals', 'official'));
     }
 
     public function create()
     {
         $personals = Personal::all();
+        $officials = Official::all();
 
         $personal = new Personal();
 
-        return view('personal.create', compact('personal','personals'));
+        return view('personal.create', compact('personal','personals','officials'));
     }
 
 
@@ -46,6 +49,7 @@ class PersonalsController extends Controller
         $personals->children = request('children');
         $personals->presentaddress = request('presentaddress');
         $personals->permanentaddress = request('permanentaddress');
+        $personals->official_id = request('official_id');
 
         $personals->save();
 
@@ -53,9 +57,9 @@ class PersonalsController extends Controller
     }
 
 
-    public function show(Personal $personal)
+    public function show(Personal $personal, Official $official)
     {
-        return view('personal.show', compact('personal'));
+        return view('personal.show', compact('personal','official'));
     }
 
 
@@ -98,7 +102,8 @@ class PersonalsController extends Controller
             'spouse' => 'nullable|string',
             'children' => 'nullable|numeric',
             'presentaddress' => 'required',
-            'permanentaddress' => 'required'
+            'permanentaddress' => 'required',
+            'official_id' => 'required'
         ]);
 
     }

@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b19a06f8-2739-4c81-85c6-d20f83e9386c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/official/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/official/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/official/form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/official/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/official/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/setuemplyeemanagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/setuemplyeemanagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OfficialsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OfficialsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PersonalsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PersonalsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Official.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Official.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Personal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Personal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_15_074818_create_personals_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_15_074818_create_personals_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_18_123809_create_officials_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_18_123809_create_officials_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/official/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/official/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/official/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/official/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/official/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/official/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/official/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/official/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/official/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/official/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/personal/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personal/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/personal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personal/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/personal/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/personal/show.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +129,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/OFFICE2/OFFICE2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
@@ -162,7 +172,9 @@
       <workItem from="1573886987329" duration="4483000" />
       <workItem from="1573909236736" duration="12611000" />
       <workItem from="1573969420075" duration="15730000" />
-      <workItem from="1574080249295" duration="12296000" />
+      <workItem from="1574080249295" duration="12886000" />
+      <workItem from="1574141792823" duration="27972000" />
+      <workItem from="1574235702228" duration="4712000" />
     </task>
     <servers />
   </component>

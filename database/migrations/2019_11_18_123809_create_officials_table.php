@@ -18,9 +18,9 @@ class CreateOfficialsTable extends Migration
             $table->integer('officeID');
             $table->string('name');
             $table->string('bloodgroup');
-            $table->integer('personalmobile');
-            $table->integer('familymobile');
-            $table->integer('gurrantormobile');
+            $table->string('personalmobile');
+            $table->string('familymobile');
+            $table->string('gurrantormobile');
             $table->string('email');
             $table->string('extracurricular')->nullable();
             $table->string('eduquali');
@@ -29,8 +29,8 @@ class CreateOfficialsTable extends Migration
             $table->integer('yearofpass')->nullable();
             $table->string('lastworkinginst')->nullable();
             $table->string('lastworkingdesig')->nullable();
-            $table->integer('lastworkingduration')->nullable();
-            $table->integer('similarexperience')->nullable();
+            $table->string('lastworkingduration')->nullable();
+            $table->string('similarexperience')->nullable();
             $table->string('pp')->nullable();
             $table->timestamps();
         });

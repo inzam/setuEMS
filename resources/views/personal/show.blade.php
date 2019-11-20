@@ -2,13 +2,15 @@
 
 @section('content')
     <div class="d-flex justify-content-center ml-auto">
-        <h2>Personal Details of {{ $personal->id }}</h2>
+        <h2>Personal Details of {{ $personal->official->name }}</h2>
     </div>
     <div class="d-flex justify-content-center">
         <div class="card" style="width:400px">
-            <img class="card-img-top" src="" alt="Card image" style="width:100%">
+            @if($personal->official->pp)
+                <img class="card-img-top" src="{{ asset('storage/'.$personal->official->pp) }}" alt="{{$official->name}}" style="width:100%">
+            @endif
             <div class="card-body">
-                <h4 class="card-title">{{$personal->id}}</h4>
+                <h4 class="card-title">{{$personal->official->name}}</h4>
                 <p class="card-text"><strong>National ID:</strong> {{ $personal->nid }}</p>
                 <p class="card-text"><strong>Date of Birth:</strong> {{ $personal->dob }}</p>
                 <p class="card-text"><strong>Age:</strong> {{ Carbon\Carbon::parse($personal->dob)->age }} Years Old</p>

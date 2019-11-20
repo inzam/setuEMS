@@ -1,68 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="h-100 row align-items-center" style="align-content: center">
+        <div class="col">
+            <div class="d-flex justify-content-center"><h1>Official Info</h1></div>
 
-    <h1>Official Info</h1>
 
-    <table class="table table-hover table-responsive">
-        <thead>
-        <tr>
-{{--            <th scope="col">#</th>--}}
-            <th scope="col">NID</th>
-{{--            <th scope="col">Passport</th>--}}
-{{--            <th scope="col">DL</th>--}}
-            <th scope="col">DOB</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Father</th>
-{{--            <th scope="col">Mother</th>--}}
-            <th scope="col">Gurrantor</th>
-{{--            <th scope="col">Maritial Status</th>--}}
-{{--            <th scope="col">Spouse</th>--}}
-{{--            <th scope="col">Children</th>--}}
-            <th scope="col">Present Address</th>
-            <th scope="col">Permanent Address</th>
-            <th scope="col">Action</th>
-            <th></th>
+        <table class="table table-hover table-responsive text-center" style="margin-left: 25%; margin-right: 25%">
+            <thead>
+            <tr>
+                <th scope="col">Office ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Blood Group</th>
+                <th scope="col">Action</th>
+                <th></th>
 
-        </tr>
-        </thead>
-    @foreach($officials as $official)
-            <tr onclick="document.location='/official/{{$official->id}}'" style="cursor:hand">
-                <td>{{ $personal->nid }}</td>
-{{--                <td>@if ($personal->passport) {{ $personal->passport }}--}}
-{{--                    @else {{'N/A'}} @endif--}}
-{{--                </td>--}}
-{{--                <td>{{ $personal->dl ? 'Yes':'No' }}</td>--}}
-                <td>{{ $personal->dob }}</td>
-                <td>{{ $personal->gender }}</td>
-                <td>{{ $personal->father }}</td>
-{{--                <td>{{ $personal->mother }}</td>--}}
-                <td>{{ $personal->gurrantor }}</td>
-{{--                <td>{{ $personal->maritalstatus }}</td>--}}
-{{--                <td>@if($personal->maritalstatus == 'unmarried'){{ 'N/A'}}--}}
-{{--                    @elseif ($personal->maritalstatus == 'divorced'){{ 'N/A' }}--}}
-{{--                    @else {{ $personal->spouse }} @endif</td>--}}
-{{--                <td>{{ $personal->children }}</td>--}}
-                <td>{{ $personal->presentaddress }}</td>
-                <td>{{ $personal->permanentaddress }}</td>
-                <td><a type="button" href="/personal/{{ $official->id }}/edit"  class="btn btn-outline-warning">Edit</a></td>
-                <td>
-                    <form action="/personal/{{ $official->id }}" method="post">
-                        @method('DELETE')
-                        @csrf
-                    <button type="submit" class="btn btn-outline-danger">Delete</button>
-                    </form>
-                </td>
             </tr>
-    @endforeach
-    </table>
+            </thead>
+            @foreach($officials as $official)
+                <tr onclick="document.location='/official/{{$official->id}}'" style="cursor:hand">
+                    <td>{{ $official->officeID }}</td>
+                    <td>{{ $official->name }}</td>
+                    <td>{{ $official->personalmobile }}</td>
+                    <td>{{ $official->email }}</td>
+                    <td>{{ $official->bloodgroup }}</td>
+                    <td><a type="button" href="/official/{{ $official->id }}/edit"  class="btn btn-outline-warning">Edit</a></td>
+                    <td>
+                        <form action="/official/{{ $official->id }}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+
 
     <div class="row">
         <div class="col-12 text-center">
             {{ $officials->links() }}
         </div>
     </div>
-
-    <a type="button" class="btn btn-primary btn-block" href="{{ url('official/create') }}">Add New</a>
-
+    <div class="col-md-2 m-auto">
+        <a type="button" class="btn btn-primary btn-block" href="{{ url('official/create') }}">Add New</a>
+    </div>
+        </div>
+    </div>
 @endsection

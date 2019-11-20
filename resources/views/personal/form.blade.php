@@ -1,5 +1,17 @@
 <fieldset class="">
     <div class="form-group">
+        <label class="col-md-4 control-label" for="name">Name</label>
+        <div class="col-md-8 inputGroupContainer">
+            <select class="custom-select" required id="official_id"name="official_id">
+                <option value="0" selected="selected">Choose..</option>
+            @foreach($officials as $official)
+                    <option value="{{ $official->id }}" >{{ $official->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        @if($errors->first('official_id')) <div class="alert alert-danger">{{ $errors->first('official_id') }}</div>@endif
+    </div>
+    <div class="form-group">
         <label class="col-md-4 control-label">NID</label>
         <div class="col-md-8 inputGroupContainer">
             <div class="input-group"><span class="input-group-addon"></span><input id="nid" name="nid" placeholder="NID"

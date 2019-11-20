@@ -28,6 +28,7 @@ class CreatePersonalsTable extends Migration
             $table->tinyInteger('children')->nullable();
             $table->string('presentaddress');
             $table->string('permanentaddress');
+            $table->integer('official_id');
             $table->timestamps();
         });
     }

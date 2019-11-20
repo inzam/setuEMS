@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="h-100 row align-items-center" style="align-content: center">
+        <div class="col">
 
-    <h1>Personal Info</h1>
+            <div class="d-flex justify-content-center">
+                <h1>Personal Info</h1>
+            </div>
 
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover table-responsive text-center ml-5">
         <thead>
         <tr>
 {{--            <th scope="col">#</th>--}}
+            <th scope="col">Name</th>
             <th scope="col">NID</th>
 {{--            <th scope="col">Passport</th>--}}
 {{--            <th scope="col">DL</th>--}}
@@ -28,6 +33,7 @@
         </thead>
     @foreach($personals as $personal)
             <tr onclick="document.location='/personal/{{$personal->id}}'" style="cursor:hand">
+                <td>{{$personal->official->name}}</td>
                 <td>{{ $personal->nid }}</td>
 {{--                <td>@if ($personal->passport) {{ $personal->passport }}--}}
 {{--                    @else {{'N/A'}} @endif--}}
@@ -62,7 +68,9 @@
             {{ $personals->links() }}
         </div>
     </div>
-
+            <div class="col-md-2 m-auto">
     <a type="button" class="btn btn-primary btn-block" href="{{ url('personal/create') }}">Add New</a>
-
+            </div>
+        </div>
+    </div>
 @endsection
